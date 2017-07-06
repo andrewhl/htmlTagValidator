@@ -459,7 +459,7 @@ close_tag "Closing Tag"
 
 tagname "Tag Name"
   = tns:([A-Za-z]) tne:([0-9A-Z_a-z-])*
-  { 
+  {
     var tn = [tns].concat(tne);
     return _u.option('settings/preserveCase', null, codex) ? _u.textNode(tn) : _u.tagify(tn);
   }
@@ -527,10 +527,10 @@ attr_assignment "Attribute Assignment"
       // TODO: & could be allowed in event attributes
       if (i.unquoted) {
         // Note: https://html.spec.whatwg.org/multipage/syntax.html#attribute-value-(unquoted)-state
-        disallowed = /[ \f\n\r\t\v\/<>&"'`=]+/;
+        disallowed = /[ \f\n\r\t\v\/<>"'`=]+/;
       } else {
         // Note: https://html.spec.whatwg.org/multipage/syntax.html#attribute-value-(double-quoted)-state
-        disallowed = /(&(?![^\s]+;)+)/;
+        disallowed = /((?![^\s]+;)+)/;
       }
       if (disallowed.test(i.value)) {
         matches = i.value.match(disallowed);
