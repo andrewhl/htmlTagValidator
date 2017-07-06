@@ -33,5 +33,7 @@
     "pegjs": "^0.10.0",
     "prettyjson": "^1.2.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "html-tag-validator": "^1.5.0"
+  }
 }
